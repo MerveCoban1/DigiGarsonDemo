@@ -1,6 +1,6 @@
 //@dart=2.9
 
-import 'package:digigarson_demo/screens/address/address.dart';
+import 'package:digigarson_demo/screens/address.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
