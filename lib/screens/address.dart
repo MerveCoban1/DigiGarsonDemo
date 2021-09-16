@@ -1,4 +1,4 @@
-import 'package:digigarson_demo/screens/address/newaddress.dart';
+import 'package:digigarson_demo/screens/newaddress.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
