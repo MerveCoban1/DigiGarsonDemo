@@ -1,5 +1,5 @@
 //@dart=2.9
-import 'package:digigarson_demo/views/login_screen.dart';
+import 'package:digigarson_demo/views//splash.dart';
 import 'package:flutter/material.dart';
 
 void main()=>runApp(MyApp());
@@ -14,8 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: LoginScreen(),
+      home: Splash(),
     );
   }
 }
-

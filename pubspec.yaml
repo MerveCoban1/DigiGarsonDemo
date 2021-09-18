@@ -78,6 +78,10 @@ flutter:
     - assets/images/logo.png
     - assets/images/logodigi.png
     - assets/images/img.png
+    - assets/images/avatar.png
+    - assets/images/img_1.png
+    - assets/images/splakback.png
+    - assets/images/arkaplan1.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
