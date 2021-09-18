@@ -1,17 +1,22 @@
-import 'package:digigarson_demo/data/database_helper.dart';
+import 'package:digigarson_demo/database//database_helper.dart';
 import 'package:digigarson_demo/models/cart.dart';
 import 'package:flutter/material.dart';
 
-class CartDetail extends StatefulWidget {
-  Cart cart;
+class ProductDetail extends StatefulWidget {
+  final int productId;
+  final String image;
+  final String productName;
+  final double productPrice;
+  final String comment;
   var databaseHelper=DatabaseHelper();
-  CartDetail(this.cart);
+
+  ProductDetail(this.productId, this.image, this.productName,this.productPrice,this.comment);
 
   @override
-  _CartDetailState createState() => _CartDetailState();
+  _ProductDetailState createState() => _ProductDetailState();
 }
 
-class _CartDetailState extends State<CartDetail> {
+class _ProductDetailState extends State<ProductDetail> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +26,9 @@ class _CartDetailState extends State<CartDetail> {
           Stack(
             children: [
               Hero(
-                tag: "deneme",
+                tag: "sütHero",
                 child: Image.network(
-                    widget.cart.productImage),
+                    widget.image),
               ),
               IconButton(
                 icon: Icon(
@@ -42,7 +47,7 @@ class _CartDetailState extends State<CartDetail> {
             children: [
               SizedBox(height: 20.0),
               Text(
-                widget.cart.productName,
+                widget.productName,
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
@@ -50,7 +55,7 @@ class _CartDetailState extends State<CartDetail> {
               ),
               SizedBox(height: 10.0),
               Text(
-                "${widget.cart.productPrice} TL",
+                "${widget.productPrice} TL",
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
@@ -61,7 +66,7 @@ class _CartDetailState extends State<CartDetail> {
               Padding(
                 padding: const EdgeInsets.only(left: 15.0,right: 15.0),
                 child: Text(
-                  "${widget.cart.quantity} adet",
+                  widget.comment,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,
@@ -73,7 +78,7 @@ class _CartDetailState extends State<CartDetail> {
               SizedBox(height: 25.0),
               InkWell(
                 onTap: (){
-                  //addToCart();
+                  addToCart();
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width-50.0,
@@ -100,9 +105,9 @@ class _CartDetailState extends State<CartDetail> {
       ),
     );
   }
-  //void addToCart() async{
-    //await widget.databaseHelper.insert(Cart(widget.productId,widget.productName,widget.image,1,widget.productPrice));
-    //print("productId: ${widget.productId}   productName:${widget.productName}   image:${widget.image}   productPrice:${widget.productPrice}");
-    //Navigator.pop(context,true);
-  //}
+  void addToCart() async{
+    await widget.databaseHelper.insert(Cart(widget.productId,widget.productName,widget.image,1,widget.productPrice));
+    print("productId: ${widget.productId}   productName:${widget.productName}   image:${widget.image}   productPrice:${widget.productPrice}");
+    Navigator.pop(context,true);
+  }
 }

@@ -1,5 +1,5 @@
 //@dart=2.9
-import 'package:digigarson_demo/screens/login_screen.dart';
+import 'package:digigarson_demo/views/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main()=>runApp(MyApp());

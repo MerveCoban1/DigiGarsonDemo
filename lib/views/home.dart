@@ -1,7 +1,7 @@
 //@dart=2.9
-import 'package:digigarson_demo/screens/categories.dart';
-import 'package:digigarson_demo/screens/profile.dart';
-import 'package:digigarson_demo/screens/settings.dart';
+import 'package:digigarson_demo/views/categories.dart';
+import 'package:digigarson_demo/views/profile.dart';
+import 'package:digigarson_demo/views/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'cart_screen.dart';
@@ -54,8 +54,8 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.all(0.0),
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Merve Çoban"),
-              accountEmail: Text("cobanmerve615@gmail.com"),
+              accountName: Text("Digigarson"),
+              accountEmail: Text("matrixteknoloji@gmail.com"),
               currentAccountPicture: Container(
                 child: Image.asset(
                   'assets/images/logo.png',

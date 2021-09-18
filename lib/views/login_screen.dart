@@ -1,12 +1,27 @@
-import 'package:digigarson_demo/screens/security_code.dart';
+import 'package:digigarson_demo/models/customer_users.dart';
+import 'package:digigarson_demo/views//security_code.dart';
+import 'package:digigarson_demo/services/service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-
-
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var txtPhone=TextEditingController();
+  var securityCode;
+  late Future<CustomerUsers> _future;
+  Service apiManager=Service();
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -51,12 +66,15 @@ class LoginScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10)
                           )
                       ),
+                      controller: txtPhone,
                     ),
                   ),
                   SizedBox(height: 20.0,),
                   Padding(
                     padding: const EdgeInsets.only(right:45.0, left: 45.0, top:5.0, bottom:15.0),
-                    child: MaterialButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Security()));},
+                    child: MaterialButton(onPressed: (){
+                      control();
+                    },
                       height: 60,
                       minWidth: double.infinity,
                       elevation: 25.0,
@@ -116,9 +134,6 @@ class LoginScreen extends StatelessWidget {
                           iconSize: 40,
                         ),
                       ),
-
-
-
                     ],
                   ),
                 ],
@@ -129,4 +144,35 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+  void control() async{
+    //database telefon numarası kontrolü
+    //var result=await databaseOperations.controlCustomerUsersPhone(txtPhone.text);
+
+    var result="1";
+    if(result=="1"){
+      //Rastgele kod üretelim
+      randomNumber();
+      //şimdi de bu telefon numarasına ait satırın phone_confirm_code değerine bu kodu atalım
+      //await databaseOperations.addSecurityCode(securityCode.toString(),txtPhone.text);
+      //şimdi de telefona sms gönderelim
+
+
+      //sayfa yönlendirmesi
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Security()));
+    }else{
+      //    ?? hata mesajı showsnackbar
+      print("hata ");
+    }
+  }
+
+  void randomNumber() {
+    var random = new Random();
+    int minValue = 1000;
+    int maxValue = 9999;
+    int result = minValue + random.nextInt(maxValue - minValue);
+    securityCode=result;
+  }
+
+
 }

@@ -1,17 +1,21 @@
-
-
-import 'package:digigarson_demo/screens/home.dart';
+import 'package:digigarson_demo/views//home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Security extends StatefulWidget {
-  const Security({Key? key}) : super(key: key);
 
   @override
   _SecurityState createState() => _SecurityState();
 }
 
 class _SecurityState extends State<Security> {
+  var txtSecurityCode=TextEditingController();
+
+  @override
+  void initState() {
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -77,6 +81,7 @@ class _SecurityState extends State<Security> {
                                 borderRadius: BorderRadius.circular(10)
                               )
                             ),
+                            controller: txtSecurityCode,
                           ),
                         ),
                            MaterialButton(onPressed: (){},
@@ -85,7 +90,10 @@ class _SecurityState extends State<Security> {
                              fontSize: 16.0,
 
                            ),),),
-                           MaterialButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));},
+                           MaterialButton(
+                             onPressed: (){
+                               control();
+                             },
                              height: 60,
                              minWidth: 120,
                              elevation: 25.0,
@@ -109,12 +117,18 @@ class _SecurityState extends State<Security> {
               ),
             ],
           )
-       
-       
-       
-       
         ]
       ),
     );
+  }
+
+  void control() async{
+    var result="1";
+    if(result=="1"){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+    }else{
+      //    ?? hata mesajı showsnackbar güvenlik kodları uyuşmuyor.
+      print("hata ");
+    }
   }
 }

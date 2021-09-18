@@ -1,13 +1,13 @@
 //@dart=2.9
-import 'package:digigarson_demo/models/product_categories.dart';
+import 'dart:developer';
 import 'package:digigarson_demo/models/products.dart';
-import 'package:digigarson_demo/screens/product_detail.dart';
-import '../data/database_operations.dart';
+import 'package:digigarson_demo/views/product_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:digigarson_demo/services/service.dart';
 
 class ProductsForCategories extends StatefulWidget {
-  int categoryId;
-  String categoryName;
+  var categoryId;
+  var categoryName;
   ProductsForCategories(this.categoryName,this.categoryId);
   @override
   _ProductsForCategoriesState createState() => _ProductsForCategoriesState();
@@ -15,20 +15,20 @@ class ProductsForCategories extends StatefulWidget {
 
 class _ProductsForCategoriesState extends State<ProductsForCategories> {
 
-  List<Products> products=[];
-  List<Products> productsList=[];
-  DatabaseOperations databaseOperations;
+  List<Products> _future;
+  List<Products> values=[];
+  Service apiManager=Service();
+
   void listData() async{
-    databaseOperations=new DatabaseOperations();
-    products=await databaseOperations.listDataForProducts(widget.categoryId);
+    _future=await apiManager.fetchDataProducts(widget.categoryId);
     setState(() {
-      productsList=products;
+      values=_future;
     });
   }
   @override
   void initState(){
-    super.initState();
     listData();
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
@@ -56,8 +56,8 @@ class _ProductsForCategoriesState extends State<ProductsForCategories> {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           crossAxisCount: 3,
-          children: List.generate(productsList.length, (index){
-            return productCard(productsList[index].id,productsList[index].image,productsList[index].name_tr,productsList[index].price,productsList[index].comment_tr);
+          children: List.generate(values.length, (index){
+            return productCard(values[index].id,values[index].image,values[index].name_tr,values[index].price,values[index].comment_tr);
           }),
       ),
     );

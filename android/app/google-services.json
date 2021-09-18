@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022565142346",
+    "project_id": "digigarsondemo",
+    "storage_bucket": "digigarsondemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022565142346:android:633b1a27ed052312057bb3",
+        "android_client_info": {
+          "package_name": "com.example.digigarson_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022565142346-a9k30gomoqfnhf88p0lcgc5n8aa38mm3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0QdWs_EbAst4oqQv0lRj71UfQMxgLd14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022565142346-a9k30gomoqfnhf88p0lcgc5n8aa38mm3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
