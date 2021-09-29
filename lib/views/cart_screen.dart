@@ -1,10 +1,13 @@
 import 'package:digigarson_demo/database//database_helper.dart';
 import 'package:digigarson_demo/models/cart.dart';
+import 'package:digigarson_demo/models/session.dart';
 import 'package:flutter/material.dart';
 
 import 'cart_detail.dart';
 
 class CartScreen extends StatefulWidget {
+  //Session session;
+  //CartScreen(this.session);
   @override
   _CartScreenState createState() => _CartScreenState();
 }

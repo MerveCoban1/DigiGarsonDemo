@@ -1,5 +1,5 @@
 //@dart=2.9
-
+import 'package:digigarson_demo/models/session.dart';
 import 'package:digigarson_demo/views//scan_qr.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flappy_search_bar/search_bar_style.dart';
@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class HomePage extends StatefulWidget {
+  //Session session;
+  //HomePage(this.session);
   @override
   _HomePageState createState() => _HomePageState();
 }

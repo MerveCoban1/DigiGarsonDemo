@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1022565142346-a9k30gomoqfnhf88p0lcgc5n8aa38mm3.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1022565142346</string>
+    <string name="google_api_key" translatable="false">AIzaSyC0QdWs_EbAst4oqQv0lRj71UfQMxgLd14</string>
+    <string name="google_app_id" translatable="false">1:1022565142346:android:633b1a27ed052312057bb3</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC0QdWs_EbAst4oqQv0lRj71UfQMxgLd14</string>
+    <string name="google_storage_bucket" translatable="false">digigarsondemo.appspot.com</string>
+    <string name="project_id" translatable="false">digigarsondemo</string>
+</resources>

@@ -1,10 +1,13 @@
 //@dart=2.9
 import 'package:digigarson_demo/components/category_card.dart';
 import 'package:digigarson_demo/models/product_categories.dart';
-import 'package:digigarson_demo/services/service.dart';
+import 'package:digigarson_demo/models/session.dart';
+import 'package:digigarson_demo/services/in_app_service.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatefulWidget {
+  //Session session;
+  //Categories(this.session);
   @override
   _CategoriesState createState() => _CategoriesState();
 }
@@ -13,7 +16,7 @@ class _CategoriesState extends State<Categories> {
 
   List<ProductCategories> _future;
   List<ProductCategories> values=[];
-  Service apiManager=Service();
+  InAppService apiManager=InAppService();
 
   @override
   void initState(){

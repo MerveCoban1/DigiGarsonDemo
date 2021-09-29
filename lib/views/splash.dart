@@ -16,7 +16,10 @@ class _SplashState extends State<Splash> {
           alignment: Alignment.center,
           children: [
             InkWell(
-              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));},
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                },
               child: Container(
                   color:Colors.white,
                   width: double.infinity,

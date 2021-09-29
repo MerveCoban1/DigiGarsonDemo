@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:digigarson_demo/models/products.dart';
 import 'package:digigarson_demo/views/product_detail.dart';
 import 'package:flutter/material.dart';
-import 'package:digigarson_demo/services/service.dart';
+import 'package:digigarson_demo/services/in_app_service.dart';
 
 class ProductsForCategories extends StatefulWidget {
   var categoryId;
@@ -17,7 +17,7 @@ class _ProductsForCategoriesState extends State<ProductsForCategories> {
 
   List<Products> _future;
   List<Products> values=[];
-  Service apiManager=Service();
+  InAppService apiManager=InAppService();
 
   void listData() async{
     _future=await apiManager.fetchDataProducts(widget.categoryId);

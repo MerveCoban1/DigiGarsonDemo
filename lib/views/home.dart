@@ -1,5 +1,7 @@
 //@dart=2.9
+import 'package:digigarson_demo/models/session.dart';
 import 'package:digigarson_demo/views/categories.dart';
+import 'package:digigarson_demo/views/login_screen.dart';
 import 'package:digigarson_demo/views/profile.dart';
 import 'package:digigarson_demo/views/settings.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,9 @@ import 'home_page.dart';
 import 'orders.dart';
 
 class Home extends StatefulWidget {
+  //Session session;
+  //Home(this.session);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -20,8 +25,12 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    super.initState();
+    //if(widget.session.accessToken==null){
+      //Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+    //}
+    //_icerikler = [HomePage(widget.session), Categories(widget.session),CartScreen(widget.session)];
     _icerikler = [HomePage(), Categories(),CartScreen()];
+    super.initState();
   }
 
   @override

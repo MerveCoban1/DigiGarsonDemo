@@ -125,7 +125,7 @@ class _SecurityState extends State<Security> {
   void control() async{
     var result="1";
     if(result=="1"){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+      //Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
     }else{
       //    ?? hata mesajı showsnackbar güvenlik kodları uyuşmuyor.
       print("hata ");
