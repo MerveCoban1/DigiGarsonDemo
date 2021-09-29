@@ -1,6 +1,7 @@
 //@dart=2.9
 import 'package:digigarson_demo/models/session.dart';
-import 'package:digigarson_demo/views//scan_qr.dart';
+import 'package:digigarson_demo/views/qr_scan.dart';
+import 'package:digigarson_demo/views/qr_scan.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                     child: IconButton(
                       icon: Icon(Icons.qr_code),
                       onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ScanQR()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> QrScan()));
                       },
                     ),
                   ),

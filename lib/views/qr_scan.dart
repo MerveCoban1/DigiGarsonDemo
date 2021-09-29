@@ -6,12 +6,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-class ScanQR extends StatefulWidget {
+class QrScan extends StatefulWidget {
   @override
-  _ScanQRState createState() => _ScanQRState();
+  _QrScanState createState() => _QrScanState();
 }
 
-class _ScanQRState extends State<ScanQR> {
+class _QrScanState extends State<QrScan> {
 
   @override
   Widget build(BuildContext context) {
